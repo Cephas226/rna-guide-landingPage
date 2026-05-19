@@ -1,0 +1,34 @@
+<section id="impact" class="py-24 px-8 md:px-16 bg-sand">
+
+  <span appReveal class="text-xs font-medium tracking-[0.14em] uppercase text-green-light mb-4 block">Impact mesurable</span>
+  <h2 appReveal [revealDelay]="1" class="font-display text-4xl lg:text-5xl font-bold text-green-deep leading-tight tracking-tight mb-12">
+    Des chiffres qui parlent<br><em class="not-italic text-green-light">aux institutions.</em>
+  </h2>
+
+  <!-- KPI grid -->
+  <div appReveal class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y divide-sand-dark border border-sand-dark rounded-md overflow-hidden mb-6">
+    @for (card of cards; track card.num) {
+      <div class="bg-white p-10 text-center">
+        <span class="font-display text-5xl font-bold text-green-deep leading-none block">
+          {{ card.num }}<span class="text-green-light text-3xl">{{ card.unit ?? '' }}</span>
+        </span>
+        <p class="text-sm text-muted mt-2 leading-snug">{{ card.label }}</p>
+        <div class="h-1 w-10 mx-auto mt-4 rounded-full bg-gradient-to-r {{ card.barColor }}"></div>
+      </div>
+    }
+  </div>
+
+  <!-- Feature grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    @for (feat of features; track feat.title; let i = $index) {
+      <div appReveal [revealDelay]="i % 2"
+           class="bg-white border border-sand-dark rounded-md p-7 flex gap-4 items-start hover:shadow-md transition-shadow">
+        <span class="text-3xl shrink-0">{{ feat.icon }}</span>
+        <div>
+          <h4 class="text-sm font-medium text-green-deep mb-1">{{ feat.title }}</h4>
+          <p class="text-sm text-muted leading-relaxed">{{ feat.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

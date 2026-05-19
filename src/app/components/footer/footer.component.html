@@ -1,0 +1,15 @@
+<footer class="bg-[#0a1f13] px-8 md:px-16 py-10 flex flex-wrap items-center justify-between gap-4">
+  <div class="font-display text-xl font-bold text-white/85">
+    🌿 RNA<span class="text-green-light">Guide</span>
+  </div>
+
+  <nav class="hidden md:flex gap-8">
+    @for (link of links; track link.anchor) {
+      <button (click)="scrollTo(link.anchor)" class="text-sm text-white/40 hover:text-white/80 transition-colors">
+        {{ link.label }}
+      </button>
+    }
+  </nav>
+
+  <p class="text-xs text-white/40">© 2025 RNA Guide · Burkina Faso</p>
+</footer>

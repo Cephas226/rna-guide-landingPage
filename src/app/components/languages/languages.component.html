@@ -1,0 +1,21 @@
+<section id="languages" class="py-24 px-8 md:px-16 bg-sand">
+
+  <span appReveal class="text-xs font-medium tracking-[0.14em] uppercase text-green-light mb-4 block">Accessibilité locale</span>
+  <h2 appReveal [revealDelay]="1" class="font-display text-4xl lg:text-5xl font-bold text-green-deep leading-tight tracking-tight mb-4">
+    Les guides RNA dans<br><em class="not-italic text-green-light">les langues du terrain.</em>
+  </h2>
+  <p appReveal [revealDelay]="2" class="text-lg text-muted leading-relaxed mb-12 max-w-xl">
+    Pour que chaque producteur agricole puisse comprendre et pratiquer la RNA dans sa langue maternelle.
+  </p>
+
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    @for (lang of languages; track lang.name; let i = $index) {
+      <div appReveal [revealDelay]="i"
+           class="bg-white border border-sand-dark rounded-md p-7 text-center hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(27,67,50,0.08)] transition-all duration-200">
+        <div class="text-5xl mb-3">{{ lang.flag }}</div>
+        <div class="font-display text-xl font-semibold text-green-deep">{{ lang.name }}</div>
+        <div class="text-xs text-muted mt-1">{{ lang.sub }}</div>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,50 @@
+<section id="problem" class="py-24 px-8 md:px-16 bg-green-deep text-white">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Left -->
+    <div>
+      <span class="text-xs font-medium tracking-[0.14em] uppercase text-green-light mb-4 block">Le constat terrain</span>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
+        Un suivi essentiel,<br><em class="not-italic text-gold">encore trop fragile.</em>
+      </h2>
+      <p class="text-white/65 text-lg font-light leading-relaxed mb-8 max-w-lg">
+        La RNA peut transformer des millions d'hectares au Sahel. Mais sans outils numériques adaptés,
+        les données se perdent, les rapports prennent des semaines, et les bailleurs manquent de preuves d'impact.
+      </p>
+
+      <div class="flex flex-col gap-4">
+        @for (p of problems; track p.title; let i = $index) {
+          <div appReveal [revealDelay]="i"
+               class="flex gap-4 items-start p-4 bg-white/5 border border-white/[0.08] rounded hover:bg-white/[0.09] transition-colors">
+            <span class="text-2xl shrink-0 mt-0.5">{{ p.icon }}</span>
+            <div>
+              <h4 class="text-sm font-medium text-white mb-1">{{ p.title }}</h4>
+              <p class="text-sm text-white/50 leading-relaxed">{{ p.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Right — Solution panel -->
+    <div appReveal class="bg-white/[0.04] border border-green-light/20 rounded-lg p-8">
+      <h3 class="font-display text-2xl text-green-light italic mb-6">RNA Guide résout tout ça.</h3>
+      <ul class="flex flex-col gap-3.5">
+        @for (s of solutions; track s) {
+          <li class="flex gap-3 items-start text-sm text-white/80 leading-relaxed">
+            <span class="text-green-light shrink-0 mt-0.5">→</span>
+            {{ s }}
+          </li>
+        }
+      </ul>
+      <div class="flex flex-wrap gap-2 mt-6">
+        @for (tag of tags; track tag) {
+          <span class="text-[0.68rem] font-medium tracking-wider uppercase px-3 py-1 rounded-sm border border-green-light/35 text-green-light">
+            {{ tag }}
+          </span>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

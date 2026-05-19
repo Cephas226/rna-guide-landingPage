@@ -1,0 +1,155 @@
+<section id="hero"
+  class="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center pt-28 pb-16 px-8 md:px-16 relative overflow-hidden"
+  style="background: linear-gradient(135deg, #F2EFE8 55%, #e8f5ec 100%)">
+
+  <!-- Background grid -->
+  <div class="absolute inset-0 bg-grid-lines pointer-events-none"></div>
+
+  <!-- Blob -->
+  <div class="absolute -right-32 -top-20 w-[700px] h-[700px] rounded-full pointer-events-none"
+    style="background: radial-gradient(circle at 40% 40%, rgba(82,183,136,0.18) 0%, rgba(212,160,23,0.07) 60%, transparent 80%); filter: blur(2px)">
+  </div>
+
+  <!-- LEFT -->
+  <div class="relative z-10">
+
+    <!-- Eyebrow -->
+    <div class="animate-fade-up-1 inline-flex items-center gap-2 border border-green-primary/20 bg-green-primary/10
+                text-green-primary text-xs font-medium tracking-widest uppercase px-3 py-1.5 rounded-sm mb-7">
+      <span class="w-1.5 h-1.5 rounded-full bg-green-light"></span>
+      Agroforesterie Digitale · Sahel
+    </div>
+
+    <!-- Title -->
+    <h1 class="animate-fade-up-2 font-display text-5xl lg:text-6xl font-bold text-green-deep leading-[1.08] tracking-tight mb-6">
+      Restaurer les terres<br>sahéliennes,<br><em class="not-italic text-green-light">données à l'appui.</em>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="animate-fade-up-3 text-lg font-light text-muted leading-relaxed max-w-lg mb-8">
+      RNA Guide digitalise le suivi de la Régénération Naturelle Assistée pour les agents terrain,
+      superviseurs et bailleurs de fonds — en zone hors-réseau comme en ville.
+    </p>
+
+    <!-- CTAs -->
+    <div class="animate-fade-up-4 flex gap-4 flex-wrap">
+      <button (click)="scrollTo('cta')"
+        class="bg-green-primary text-white px-8 py-3.5 rounded-sm text-sm font-medium hover:bg-green-deep hover:-translate-y-0.5 transition-all">
+        Demander une démo →
+      </button>
+      <button (click)="scrollTo('features')"
+        class="border border-green-primary text-green-primary px-8 py-3.5 rounded-sm text-sm font-medium hover:bg-green-pale transition-all">
+        Voir les fonctionnalités
+      </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="animate-fade-up-5 flex gap-10 flex-wrap mt-12">
+      @for (stat of stats; track stat.label) {
+        <div>
+          <div class="font-display text-3xl font-bold text-green-deep leading-none">{{ stat.value }}</div>
+          <div class="text-xs text-muted mt-1 tracking-wide">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- RIGHT — Phone mockup -->
+  <div class="relative z-10 flex justify-center items-center mt-16 lg:mt-0 animate-fade-in">
+    <div class="relative" style="filter: drop-shadow(0 40px 60px rgba(27,67,50,0.25))">
+
+      <!-- Phone frame -->
+      <div class="w-[280px] h-[540px] rounded-[36px] bg-green-deep border-[8px] border-[#0f2b20] relative overflow-hidden"
+           style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08)">
+
+        <!-- Notch -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[90px] h-[22px] bg-[#0f2b20] rounded-b-2xl z-10"></div>
+
+        <!-- Screen -->
+        <div class="w-full h-full p-5 pt-7 flex flex-col gap-3"
+             style="background: linear-gradient(160deg, #1e5c40 0%, #0f2b20 100%)">
+
+          <!-- Header -->
+          <div class="flex justify-between items-center">
+            <span class="font-display text-sm text-white font-semibold">RNA Guide</span>
+            <span class="w-2 h-2 rounded-full bg-green-light animate-pulse-dot"></span>
+          </div>
+
+          <!-- Map -->
+          <div class="relative w-full h-[170px] rounded-xl overflow-hidden"
+               style="background: linear-gradient(135deg, #2a7a56 0%, #1e5c40 50%, #15412d 100%)">
+            <div class="absolute inset-0 bg-map-grid"></div>
+
+            <!-- Parcels -->
+            <div class="absolute border-2 border-green-light rounded-md"
+                 style="width:80px;height:55px;top:25px;left:30px;background:rgba(82,183,136,0.18)"></div>
+            <div class="absolute border-2 rounded-md"
+                 style="width:55px;height:40px;top:45px;left:130px;border-color:#D4A017;background:rgba(212,160,23,0.15)"></div>
+            <div class="absolute border-2 border-green-light rounded-md"
+                 style="width:65px;height:50px;top:85px;left:60px;background:rgba(82,183,136,0.18)"></div>
+
+            <!-- GPS pin -->
+            <div class="absolute w-2.5 h-2.5 rounded-full bg-terra animate-pulse-dot"
+                 style="top:30px;left:155px;box-shadow:0 0 0 3px rgba(224,123,57,0.3)"></div>
+
+            <!-- Label -->
+            <div class="absolute bottom-2 left-2 text-[0.55rem] text-white/70 font-mono bg-black/30 px-1.5 py-0.5 rounded">
+              Centre-Nord · GPS actif
+            </div>
+          </div>
+
+          <!-- Cards -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-2 bg-white/[0.07] border border-white/[0.08] rounded-lg p-2.5">
+              <div class="w-8 h-8 rounded-md flex items-center justify-center text-base shrink-0"
+                   style="background:rgba(82,183,136,0.2)">🌳</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-[0.65rem] text-white/90 font-medium">Faidherbia albida</div>
+                <div class="text-[0.55rem] text-white/45">Parcelle #047 · Inventaire OK</div>
+              </div>
+              <div class="font-mono text-[0.65rem] text-green-light font-medium shrink-0">24 tiges</div>
+            </div>
+            <div class="flex items-center gap-2 bg-white/[0.07] border border-white/[0.08] rounded-lg p-2.5">
+              <div class="w-8 h-8 rounded-md flex items-center justify-center text-base shrink-0"
+                   style="background:rgba(212,160,23,0.2)">💰</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-[0.65rem] text-white/90 font-medium">Revenus PFNL</div>
+                <div class="text-[0.55rem] text-white/45">Karité · Saison 2024</div>
+              </div>
+              <div class="font-mono text-[0.65rem] text-green-light font-medium shrink-0">87 500 F</div>
+            </div>
+            <div class="flex items-center gap-2 bg-white/[0.07] border border-white/[0.08] rounded-lg p-2.5">
+              <div class="w-8 h-8 rounded-md flex items-center justify-center text-base shrink-0"
+                   style="background:rgba(224,123,57,0.2)">📷</div>
+              <div class="flex-1 min-w-0">
+                <div class="text-[0.65rem] text-white/90 font-medium">Suivi photo</div>
+                <div class="text-[0.55rem] text-white/45">Avant / Après · 2 ans</div>
+              </div>
+              <div class="font-mono text-[0.65rem] text-green-light font-medium shrink-0">Score 4.8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating badge 1 -->
+      <div class="hidden lg:flex absolute -right-16 top-20 items-center gap-2 bg-white rounded-xl px-3 py-2.5 animate-float border border-green-primary/10"
+           style="box-shadow:0 8px 32px rgba(27,67,50,0.18)">
+        <span class="text-2xl">🛜</span>
+        <div>
+          <div class="text-xs font-medium text-green-deep leading-tight">Offline-first</div>
+          <div class="text-[0.6rem] text-muted">Sync automatique au réseau</div>
+        </div>
+      </div>
+
+      <!-- Floating badge 2 -->
+      <div class="hidden lg:flex absolute -left-20 bottom-24 items-center gap-2 bg-green-deep rounded-xl px-3 py-2.5 animate-float-delayed"
+           style="box-shadow:0 8px 32px rgba(27,67,50,0.25)">
+        <span class="w-2 h-2 rounded-full bg-green-light animate-pulse-dot shrink-0"></span>
+        <div>
+          <div class="text-xs font-medium text-white/90 leading-tight">Sync en cours…</div>
+          <div class="text-[0.6rem] text-white/50">12 parcelles · 34 photos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

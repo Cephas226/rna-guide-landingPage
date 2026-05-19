@@ -1,0 +1,36 @@
+<section id="testimonials" class="py-24 px-8 md:px-16 bg-green-pale">
+
+  <span appReveal class="text-xs font-medium tracking-[0.14em] uppercase text-green-primary mb-4 block">Ils nous font confiance</span>
+  <h2 appReveal [revealDelay]="1" class="font-display text-4xl lg:text-5xl font-bold text-green-deep leading-tight tracking-tight mb-12">
+    Ce que disent les acteurs du terrain.
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+    @for (t of testimonials; track t.name; let i = $index) {
+      <div appReveal [revealDelay]="i"
+           class="bg-white rounded-md p-8 border border-green-primary/12 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(45,106,79,0.10)] transition-all duration-300">
+        <div class="font-display text-5xl text-green-light leading-none mb-2">"</div>
+        <p class="text-sm text-ink leading-relaxed italic mb-6">{{ t.text }}</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-primary flex items-center justify-center text-white text-xs font-semibold shrink-0">
+            {{ t.initials }}
+          </div>
+          <div>
+            <div class="text-sm font-medium text-green-deep">{{ t.name }}</div>
+            <div class="text-xs text-muted">{{ t.role }}</div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Partners -->
+  <div appReveal class="flex flex-wrap gap-4 justify-center items-center pt-12 border-t border-green-primary/15">
+    @for (p of partners; track p.name) {
+      <div class="flex items-center gap-2 px-4 py-2.5 border border-green-primary/20 rounded-sm bg-white/70 text-sm font-medium text-green-deep tracking-wide">
+        <span>{{ p.icon }}</span>
+        <span>{{ p.name }}</span>
+      </div>
+    }
+  </div>
+</section>

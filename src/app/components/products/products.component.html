@@ -1,0 +1,30 @@
+<section id="products" class="py-24 px-8 md:px-16 bg-green-deep text-white">
+
+  <span appReveal class="text-xs font-medium tracking-[0.14em] uppercase text-green-light mb-4 block">Architecture produit</span>
+  <h2 appReveal [revealDelay]="1" class="font-display text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-14">
+    Trois outils,<br>un écosystème intégré.
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    @for (product of products; track product.title; let i = $index) {
+      <div appReveal [revealDelay]="i"
+           class="border border-white/10 rounded-md p-8 bg-white/[0.04] hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300">
+        <span class="inline-block text-xs font-medium tracking-[0.1em] uppercase px-3 py-1 rounded-sm mb-5"
+              [ngClass]="tagClasses[product.tagVariant]">
+          {{ product.tag }}
+        </span>
+        <div class="text-4xl mb-4">{{ product.icon }}</div>
+        <h3 class="font-display text-xl font-semibold text-white mb-2">{{ product.title }}</h3>
+        <p class="text-sm text-white/55 leading-relaxed mb-5">{{ product.description }}</p>
+        <ul class="flex flex-col gap-2">
+          @for (feat of product.features; track feat) {
+            <li class="flex items-center gap-2 text-sm text-white/70">
+              <span class="text-green-light text-xs">✓</span>
+              {{ feat }}
+            </li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

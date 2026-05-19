@@ -1,0 +1,27 @@
+<nav
+  [class]="'fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 md:px-16 py-4 backdrop-blur-md border-b border-green-primary/10 transition-shadow duration-300 '
+    + (scrolled() ? 'shadow-[0_4px_32px_rgba(27,67,50,0.10)]' : '')"
+  style="background: rgba(242,239,232,0.88)">
+
+  <!-- Logo -->
+  <button (click)="scrollTo('hero')" class="flex items-center gap-2 font-display text-2xl font-bold text-green-deep tracking-tight">
+    🌿 RNA<span class="text-green-light">Guide</span>
+  </button>
+
+  <!-- Links -->
+  <div class="hidden md:flex items-center gap-8">
+    <button (click)="scrollTo('problem')"   class="text-sm font-medium text-green-primary hover:text-green-deep transition-colors">Problématique</button>
+    <button (click)="scrollTo('features')"  class="text-sm font-medium text-green-primary hover:text-green-deep transition-colors">Fonctionnalités</button>
+    <button (click)="scrollTo('products')"  class="text-sm font-medium text-green-primary hover:text-green-deep transition-colors">Produits</button>
+    <button (click)="scrollTo('impact')"    class="text-sm font-medium text-green-primary hover:text-green-deep transition-colors">Impact</button>
+    <button (click)="scrollTo('cta')"
+      class="bg-green-primary text-white text-sm font-medium px-5 py-2 rounded-sm hover:bg-green-deep transition-colors hover:-translate-y-px">
+      Demander une démo
+    </button>
+  </div>
+
+  <!-- Mobile menu button -->
+  <button (click)="scrollTo('cta')" class="md:hidden bg-green-primary text-white text-sm font-medium px-4 py-2 rounded-sm">
+    Démo
+  </button>
+</nav>

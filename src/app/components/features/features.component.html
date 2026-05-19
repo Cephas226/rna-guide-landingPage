@@ -1,0 +1,29 @@
+<section id="features" class="py-24 px-8 md:px-16 bg-sand">
+
+  <div class="max-w-2xl mb-14">
+    <span appReveal class="text-xs font-medium tracking-[0.14em] uppercase text-green-light mb-4 block">Fonctionnalités clés</span>
+    <h2 appReveal [revealDelay]="1" class="font-display text-4xl lg:text-5xl font-bold text-green-deep leading-tight tracking-tight mb-4">
+      Conçu pour le terrain,<br>pensé pour les institutions.
+    </h2>
+    <p appReveal [revealDelay]="2" class="text-lg text-muted leading-relaxed">
+      Chaque fonctionnalité répond à un besoin réel des agents terrain, superviseurs ou bailleurs de fonds opérant au Sahel.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @for (feat of features; track feat.title; let i = $index) {
+      <div appReveal [revealDelay]="i % 3"
+           class="relative bg-white border border-sand-dark rounded-md p-8 overflow-hidden card-border-top transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(27,67,50,0.10)] hover:border-green-pale"
+           [class.card-border-gold]="feat.cardVariant === 'gold'"
+           [class.card-border-terra]="feat.cardVariant === 'terra'">
+        <span class="text-4xl mb-4 block">{{ feat.emoji }}</span>
+        <h3 class="font-display text-xl font-semibold text-green-deep mb-2">{{ feat.title }}</h3>
+        <p class="text-sm text-muted leading-relaxed">{{ feat.description }}</p>
+        <span class="inline-block mt-4 text-[0.68rem] font-medium tracking-wider uppercase px-2.5 py-1 rounded-sm"
+              [ngClass]="badgeClasses[feat.badgeVariant]">
+          {{ feat.badge }}
+        </span>
+      </div>
+    }
+  </div>
+</section>
